@@ -49,6 +49,8 @@ a:visited {
 }
 
 .btns-primary:hover {
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
   background-color: #e3b197;
   border-color: #e3b197;
   color: white;
@@ -56,6 +58,7 @@ a:visited {
 
 .app {
   position: relative;
+  padding-bottom: 48px;
 }
 
 .nav {
@@ -85,6 +88,11 @@ a:visited {
 
 .nav-item {
   font-size: 2.2rem;
+}
+
+.nav-item:hover {
+  color: #e3b197;
+  cursor: pointer;
 }
 
 .nav-item:not(first-child) {
@@ -146,7 +154,23 @@ a:visited {
 }
 
 .infor__socials-item:not(:first-child) {
-  margin-left: 14px;
+  margin-left: 16px;
+}
+
+.infor__socials-item:hover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+  cursor: pointer;
+}
+
+.infor__socials-item:hover i {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  color: #e3b197;
+  -webkit-transform: scale(1.8);
+          transform: scale(1.8);
 }
 
 .infor__socials i {
@@ -172,6 +196,14 @@ a:visited {
   margin-left: 6px;
 }
 
+.infor__hashtags-item:hover {
+  -webkit-transition: 1s all;
+  transition: 1s all;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
 .musics {
   height: 358px;
   overflow: auto;
@@ -188,7 +220,7 @@ a:visited {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 6px 0;
+  padding: 6px 6px 6px 0;
 }
 
 .musics__item-no {
@@ -236,6 +268,19 @@ a:visited {
   border-bottom: 1px solid #ddd;
 }
 
+.musics__item:hover {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  background-color: #e4d7d0;
+  cursor: pointer;
+}
+
+.musics__item:hover .musics__item-title {
+  -webkit-transition: 1s all;
+  transition: 1s all;
+  letter-spacing: 1px;
+}
+
 .category {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -272,5 +317,109 @@ a:visited {
 
 .category__item-title {
   font-size: 1.4rem;
+}
+
+.controls {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 48px;
+  background-color: white;
+  border-top: 1px solid #ddd;
+}
+
+.controls .control__item {
+  height: 100%;
+  border-radius: 50%;
+  padding: 10px 11px;
+  margin-top: 3px;
+  line-height: 1.8rem;
+}
+
+.controls .control__item i {
+  font-size: 2rem;
+}
+
+.controls .control__item:hover {
+  color: #e3b197;
+  cursor: pointer;
+}
+
+.controls .control__item:not(:first-child) {
+  margin-left: 10px;
+}
+
+.controls .control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.controls .process {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1.6rem;
+}
+
+.controls .process__bar {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 0 14px;
+}
+
+.controls .process__bar span {
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #ddd;
+}
+
+.controls .song {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.controls .song__section {
+  margin-left: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.controls .song__section-title {
+  font-size: 1.8rem;
+  margin-left: 12px;
+  letter-spacing: 1px;
+}
+
+.controls .song__section-title:hover {
+  color: #e3b197;
+  letter-spacing: 3px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.controls .song__section-img {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
 }
 /*# sourceMappingURL=main.css.map */

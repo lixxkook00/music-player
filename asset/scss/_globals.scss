@@ -43,6 +43,7 @@ a:visited {
 .btns-primary {
     background-color: white;
     &:hover {
+        transition: 0.5s all;
         background-color: #e3b197;
         border-color: #e3b197;
         color: white;
