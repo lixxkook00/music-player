@@ -1,0 +1,272 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "VT323", monospace;
+}
+
+ul {
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+a,
+a:active,
+a:visited {
+  color: black;
+}
+
+.btns {
+  outline: none;
+  font-size: 2rem;
+  padding: 10px 20px;
+  border-radius: 24px;
+  border: 1px solid #d0d0d0;
+}
+
+.btns:hover {
+  cursor: pointer;
+}
+
+.btns-primary {
+  background-color: white;
+}
+
+.btns-primary:hover {
+  background-color: #e3b197;
+  border-color: #e3b197;
+  color: white;
+}
+
+.nav {
+  margin-top: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.nav-logo {
+  width: 120px;
+}
+
+.nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav-item {
+  font-size: 2.2rem;
+}
+
+.nav-item:not(first-child) {
+  margin-left: 36px;
+}
+
+.nav-item--active {
+  color: #e3b197;
+  position: relative;
+}
+
+.nav-item--active::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #e3b197;
+}
+
+.main {
+  margin-top: 40px;
+}
+
+.infor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.infor__avt {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 80%;
+  margin-bottom: 12px;
+}
+
+.infor__name {
+  font-size: 2.6rem;
+}
+
+.infor__desc {
+  font-size: 1.8rem;
+}
+
+.infor__socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px 0;
+}
+
+.infor__socials-item:not(:first-child) {
+  margin-left: 14px;
+}
+
+.infor__socials i {
+  font-size: 2.2rem;
+}
+
+.infor__hashtags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.infor__hashtags-item {
+  font-size: 1.6rem;
+  padding: 0 6px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.infor__hashtags-item:not(:first-child) {
+  margin-left: 6px;
+}
+
+.musics {
+  height: 428px;
+  overflow: auto;
+}
+
+.musics::-webkit-scrollbar {
+  display: none;
+}
+
+.musics__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 6px 0;
+}
+
+.musics__item-no {
+  width: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2rem;
+}
+
+.musics__item-img {
+  width: 50px;
+  height: 50px;
+}
+
+.musics__item-title {
+  margin-left: 30px;
+  font-size: 2rem;
+  font-weight: 900;
+  width: 40%;
+}
+
+.musics__item-decs {
+  font-size: 1.8rem;
+  margin-left: 12px;
+}
+
+.musics__item-time {
+  margin-left: auto;
+  font-size: 1.8rem;
+}
+
+.musics__item:first-child {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.musics__item:not(:first-child) {
+  border-bottom: 1px solid #ddd;
+}
+
+.category {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow-y: auto;
+  margin-top: 16px;
+  padding-bottom: 30px;
+  border-radius: 20px;
+}
+
+.category__item {
+  -webkit-box-shadow: 4px 8px 15px 2px #c5c3c3;
+          box-shadow: 4px 8px 15px 2px #c5c3c3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 3px;
+  font-size: 1.2rem;
+}
+
+.category__item-album {
+  font-size: 1.6rem;
+  font-weight: 900;
+}
+
+.category__item-title {
+  font-size: 1.4rem;
+}
+/*# sourceMappingURL=main.css.map */
