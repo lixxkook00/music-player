@@ -2,6 +2,10 @@
 @import "globals";
 @import "animation";
 
+.app {
+    position: relative;
+}
+
 // NAV
 .nav {
     margin-top: 8px;
@@ -49,7 +53,7 @@
     &__avt {
         border-radius: 50%;
         overflow: hidden;
-        width: 80%;
+        width: 60%;
         margin-bottom: 12px;
     }
     &__name {
@@ -85,7 +89,7 @@
 
 // Main Musics
 .musics {
-    height: 428px;
+    height: 358px;
     overflow: auto;
     &::-webkit-scrollbar {
         display: none;
@@ -135,7 +139,7 @@
     display: flex;
     flex-wrap: nowrap;
     overflow-y: auto;
-    margin-top: 16px;
+    margin-top: 25px;
     padding-bottom: 30px;
     border-radius: 20px;
     &__item {
