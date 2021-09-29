@@ -4,6 +4,15 @@
     .hidden-t {
         display: none;
     }
+    .category {
+        overflow-x: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    .infor {
+        margin-bottom: 16px;
+    }
 }
 
 // Motherfucking Iphone 5S
@@ -16,16 +25,42 @@
     .hidden-m-t {
         display: none !important;
     }
-    .infor {
-        margin-bottom: 16px;
+    .musics__item-title {
+        margin-left: 12px;
+    }
+    .musics__item-no {
+        margin: 0 8px;
     }
 }
 
 /* Mobile Only */
 
 @media (max-width: 739px) {
+    .nav {
+        justify-content: center;
+    }
     .hidden-m {
         display: none;
+    }
+    .musics__item-title {
+        margin-left: 4px;
+    }
+    .musics__item-no {
+        margin: 0 8px;
+    }
+    .musics__item-body {
+        flex-direction: column;
+    }
+    .musics__item-body {
+        flex: 1;
+        margin-left: 4px;
+        align-items: flex-start;
+    }
+    .musics__item-time {
+        margin-left: 0;
+    }
+    .control {
+        justify-content: space-evenly;
     }
 }
 

@@ -56,6 +56,14 @@ a:visited {
   color: white;
 }
 
+.text-one-line {
+  clear: both;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 @-webkit-keyframes rotateAll {
   0% {
     -webkit-transition: all 0.5s;
@@ -244,6 +252,7 @@ a:visited {
 }
 
 .musics__item {
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -254,7 +263,6 @@ a:visited {
 }
 
 .musics__item-no {
-  width: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -265,6 +273,20 @@ a:visited {
       -ms-flex-align: center;
           align-items: center;
   font-size: 2rem;
+  margin: 0 20px;
+}
+
+.musics__item-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 12px;
 }
 
 .musics__item-img {
@@ -273,10 +295,15 @@ a:visited {
 }
 
 .musics__item-title {
+  width: 70%;
   margin-left: 30px;
   font-size: 2rem;
   font-weight: 900;
-  width: 40%;
+}
+
+.musics__item-album {
+  width: 30%;
+  margin-left: 12px;
 }
 
 .musics__item-decs {
@@ -287,6 +314,10 @@ a:visited {
 .musics__item-time {
   margin-left: auto;
   font-size: 1.8rem;
+}
+
+.musics__item.active {
+  background-color: #e4d7d0;
 }
 
 .musics__item:first-child {
@@ -335,9 +366,10 @@ a:visited {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  letter-spacing: 3px;
+  letter-spacing: 0.5px;
   font-size: 1.2rem;
   overflow: hidden;
+  padding-bottom: 4px;
 }
 
 .category__item:hover {
