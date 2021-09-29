@@ -287,13 +287,12 @@ a:visited {
   display: flex;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  overflow-y: auto;
   margin-top: 25px;
   padding-bottom: 30px;
-  border-radius: 20px;
 }
 
 .category__item {
+  border-radius: 10px;
   -webkit-box-shadow: 4px 8px 15px 2px #c5c3c3;
           box-shadow: 4px 8px 15px 2px #c5c3c3;
   display: -webkit-box;
@@ -308,6 +307,15 @@ a:visited {
           align-items: center;
   letter-spacing: 3px;
   font-size: 1.2rem;
+  overflow: hidden;
+}
+
+.category__item:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .category__item-album {
