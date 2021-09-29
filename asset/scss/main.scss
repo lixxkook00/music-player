@@ -265,6 +265,9 @@
             width: $size;
             height: $size;
             border: 1px solid #ddd;
+            border-radius: 50%;
+            overflow: hidden;
+            animation: rotateAll 2s infinite linear;
         }
     }
 }

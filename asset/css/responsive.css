@@ -1,1 +1,33 @@
-/* No CSS *//*# sourceMappingURL=responsive.css.map */
+/* Mobile & Tablet */
+@media (max-width: 1023px) {
+  .hidden-t {
+    display: none;
+  }
+}
+
+/* Tablet Only */
+@media (min-width: 740px) and (max-width: 1023px) {
+  .hidden-m-t {
+    display: none !important;
+  }
+  .infor {
+    margin-bottom: 16px;
+  }
+}
+
+/* Mobile Only */
+@media (max-width: 739px) {
+  .hidden-m {
+    display: none;
+  }
+}
+
+/* Tablet to PC low resolution */
+/* > PC low resolution */
+/* PC only */
+@media (min-width: 1024px) {
+  .hide-on-pc {
+    display: none !important;
+  }
+}
+/*# sourceMappingURL=responsive.css.map */

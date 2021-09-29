@@ -1,0 +1,52 @@
+/* Mobile & Tablet */
+
+@media (max-width: 1023px) {
+    .hidden-t {
+        display: none;
+    }
+}
+
+// Motherfucking Iphone 5S
+@media (max-width: 321px) {
+}
+
+/* Tablet Only */
+
+@media (min-width: 740px) and (max-width: 1023px) {
+    .hidden-m-t {
+        display: none !important;
+    }
+    .infor {
+        margin-bottom: 16px;
+    }
+}
+
+/* Mobile Only */
+
+@media (max-width: 739px) {
+    .hidden-m {
+        display: none;
+    }
+}
+
+/* Tablet to PC low resolution */
+
+@media (min-width: 985px) and (max-width: 1200px) {
+}
+
+/* > PC low resolution */
+
+@media (min-width: 1024px) and (max-width: 1239px) {
+}
+
+/* PC only */
+
+@media (min-width: 1024px) {
+    .hide-on-pc {
+        display: none !important;
+    }
+}
+
+// PC
+@media (min-width: 1200px) {
+}

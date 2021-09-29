@@ -56,6 +56,36 @@ a:visited {
   color: white;
 }
 
+@-webkit-keyframes rotateAll {
+  0% {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateAll {
+  0% {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 .app {
   position: relative;
   padding-bottom: 48px;
@@ -429,5 +459,9 @@ a:visited {
   width: 30px;
   height: 30px;
   border: 1px solid #ddd;
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-animation: rotateAll 2s infinite linear;
+          animation: rotateAll 2s infinite linear;
 }
 /*# sourceMappingURL=main.css.map */
