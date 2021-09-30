@@ -1,18 +1,23 @@
+// Element
 const musicArea = document.querySelector('.musics')
 const categoryArea = document.querySelector('.category')
 const songSection = document.querySelector('.song__section')
 const songTimeEnd = document.querySelector('.process__end')
 const songTimeCurrent = document.querySelector('.process__start')
-
+const processPlaying = document.querySelector('#processPlaying')
+const processMain = document.querySelector('#processMain')
+// Button
 const audio = document.querySelector('.audio')
 const btnPrev = document.querySelector('#btnPrev')
 const btnPlay = document.querySelector('#btnPlay')
 const btnNext = document.querySelector('#btnNext')
 const btnRandom = document.querySelector('#btnRandom')
 const btnUndo = document.querySelector('#btnUndo')
+const playIcon = document.querySelector('#playIcon')
+const pauseIcon = document.querySelector('#pauseIcon')
 
 
-import data,  {category} from './data.js'
+import data , {category} from './data.js'
 
 // Render UI
 const renderMusic = (data) => {
@@ -57,35 +62,66 @@ const renderCategory = (data) => {
     categoryArea.innerHTML = categoryRaw;
 }
 
+const showIcon = (state) => {
+    if(state) {
+        showIconPause();
+    }else{
+        showIconPlay();
+    }
+}
+
+const showIconPlay = () => {
+    playIcon.classList.remove('hide');
+    pauseIcon.classList.add('hide');
+}
+
+const showIconPause = () => {
+    playIcon.classList.add('hide');
+    pauseIcon.classList.remove('hide');
+}
+
 renderMusic(data)
 renderCategory(category)
 
 // Handle Event
+const songs = document.querySelectorAll('.musics__item');
+
 let currentIndexSong = 0;
+let playingState = false;
+let randomState = false;
+let undoState = false;
 const listSongLength = data.length;
 
-const songs = document.querySelectorAll('.musics__item');
+// Update current time
+const updateCurrentTimePlaying = () => {
+    const sectionCurrentTimeSecond = parseInt(audio.currentTime)%60;
+    const sectionCurrentTimeMinute = Math.floor(audio.currentTime/60);
+
+    // format minute type
+    let second = '';
+    if(sectionCurrentTimeSecond < 10){
+        second = `0${sectionCurrentTimeSecond}`
+    }else{
+        second = sectionCurrentTimeSecond
+    }
+    songTimeCurrent.innerText = `${sectionCurrentTimeMinute}:${second}`
+    console.log()
+    
+    // update process bar
+    processPlaying.style.width = `${parseInt((audio.currentTime/audio.duration)*100)}%`
+}
 
 // Select from list
 songs.forEach((song) => {
     song.onclick = () => {
-        // // Active UI
-        // songs.forEach((song) => {
-        //     song.classList.remove('active');
-        // })
-        // song.classList.add('active');
-        
-        // updata song section
         const currentIndex = song.dataset.index -1
         currentIndexSong = currentIndex
-        setSongPlaying(currentIndexSong)
-
-        console.log(song)
+        playSong(currentIndexSong)
     }
 })
 
 // Handle controls
-const setSongPlaying = (index) => {
+const playSong = (index) => {
     const musicURL = data[index].musicURL;
     // Active UI
     songs.forEach((song) => {
@@ -107,50 +143,112 @@ const setSongPlaying = (index) => {
     audio.src = `./asset/music/${musicURL}`
     audio.play();
 
-    // Update current time
+    // Update per second current time
     setInterval(() => {
-        // convert to minute
-        const sectionCurrentTimeSecond = parseInt(audio.currentTime)%60;
-        const sectionCurrentTimeMinute = Math.floor(audio.currentTime/60);
-
-        let second = '';
-        if(sectionCurrentTimeSecond < 10){
-            second = `0${sectionCurrentTimeSecond}`
-        }else{
-            second = sectionCurrentTimeSecond
+        updateCurrentTimePlaying();
+        // Handle song overl
+        if(audio.ended){
+            if(undoState){
+                playSong(currentIndexSong);
+            }else{
+                nextSong();
+            }
         }
-        songTimeCurrent.innerText = `${sectionCurrentTimeMinute}:${second}`
     },1000)
+
+    // Show icon pause
+    playingState = true;
+    showIcon(playingState);
+
+    
 }
 
 // Control Onclick
-btnPrev.onclick = () => {
-    if(currentIndexSong > 0){
-        currentIndexSong = currentIndexSong - 1;
-        setSongPlaying(currentIndexSong);
-    }else if(currentIndexSong === 0) {
-        currentIndexSong = listSongLength-1;
-        setSongPlaying(currentIndexSong);
-    }
-    console.log(currentIndexSong)
-}
-btnPlay.onclick = () => {
-    audio.pause()
-}
-btnNext.onclick = () => {
-    if(currentIndexSong === (listSongLength-1)){
-        currentIndexSong = 0;
-        setSongPlaying(currentIndexSong);
+const prevSong = () => {
+    if(!randomState) {
+        if(currentIndexSong > 0){
+            currentIndexSong = currentIndexSong - 1;
+            playSong(currentIndexSong);
+        }else if(currentIndexSong === 0) {
+            currentIndexSong = listSongLength-1;
+            playSong(currentIndexSong);
+        }
     }else{
-        currentIndexSong = currentIndexSong + 1;
-        setSongPlaying(currentIndexSong);
+        currentIndexSong = parseInt(Math.random()*listSongLength);
+        playSong(currentIndexSong);
+        console.log(randomState,currentIndexSong);
     }
-    console.log(currentIndexSong)
 }
+
+const nextSong = () => {
+    if(!randomState) {
+        if(currentIndexSong === (listSongLength-1)){
+            currentIndexSong = 0;
+            playSong(currentIndexSong);
+        }else{
+            currentIndexSong = currentIndexSong + 1;
+            playSong(currentIndexSong);
+        }
+    }else{
+        currentIndexSong = parseInt(Math.random()*listSongLength);
+        playSong(currentIndexSong);
+        console.log(randomState,currentIndexSong);
+    }
+}
+
+// NEXT
+btnPrev.onclick = () => {
+    prevSong();
+}
+// PLAY/PAUSE
+btnPlay.onclick = () => {
+    if(playingState){
+        audio.pause()
+        playingState = false;
+        showIcon(playingState)
+    }else{
+        audio.play();
+        playingState = true;
+        showIcon(playingState)
+    }
+}
+
+// NEXT
+btnNext.onclick = () => {
+    nextSong();
+}
+// RANDOM
 btnRandom.onclick = () => {
-    console.log('random')
+    if(!randomState){
+        btnRandom.classList.add('active')
+        randomState = true;
+    }else{
+        btnRandom.classList.remove('active')
+        randomState = false;
+    }
 }
+// UNDO
 btnUndo.onclick = () => {
-    console.log('undo')
+    if(!undoState){
+        btnUndo.classList.add('active')
+        undoState = true;
+    }else{
+        btnUndo.classList.remove('active')
+        undoState = false;
+    }
+}
+
+// PROCESS BAR
+processMain.onclick = (e) => {
+    const processBarMaxWidth = processMain.offsetWidth;
+    const processBarCurrentWidth = e.offsetX;
+
+    // getValue
+    const valuePercentProcessOnClick = parseInt((processBarCurrentWidth/processBarMaxWidth)*100);
+
+    // setValue
+    processPlaying.style.width = `${valuePercentProcessOnClick}%`;
+    audio.currentTime = (valuePercentProcessOnClick/100)*audio.duration;
+    audio.play();
 }
 

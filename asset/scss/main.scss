@@ -157,6 +157,7 @@
             font-size: 1.8rem;
         }
         &.active {
+            transition: all 1s;
             background-color: #e4d7d0;
         }
     }
@@ -228,6 +229,9 @@
         i {
             font-size: 2rem;
         }
+        i.active {
+            color: #e3b197;
+        }
         &:hover {
             color: #e3b197;
             cursor: pointer;
@@ -248,12 +252,24 @@
         &__bar {
             flex: 1;
             padding: 0 14px;
-            span {
+            &-main {
                 display: block;
+                position: relative;
                 width: 100%;
                 height: 4px;
                 border-radius: 2px;
                 background-color: #ddd;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            &-playing {
+                position: absolute;
+                height: 100%;
+                background-color: #e3b197;
+                top: 0;
+                left: 0;
+                transition: all 0.5s ease-in-out;
             }
         }
     }

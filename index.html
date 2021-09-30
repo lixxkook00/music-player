@@ -141,12 +141,14 @@
       <div class="controls">
         <div class="container">
           <div class="row">
+            <!-- Controls left -->
             <div class="control col-xl-3 col-md-6 col-12">
               <div class="control__item">
                 <i id="btnPrev" class="fas fa-step-backward"></i>
               </div>
-              <div class="control__item">
-                <i id="btnPlay" class="fas fa-play"></i>
+              <div id="btnPlay" class="control__item">
+                <i id="playIcon" class="fas fa-play"></i>
+                <i id="pauseIcon" class="fas fa-pause hide"></i>
               </div>
               <div class="control__item">
                 <i id="btnNext" class="fas fa-step-forward"></i>
@@ -158,13 +160,17 @@
                 <i id="btnUndo" class="fas fa-undo"></i>
               </div>
             </div>
-            <div class="process col-xl-5 col-md-6 hidden-m">
+            <!-- Controls center -->
+            <div class="process col-xl-5 col-md-6">
               <div class="process__start">0:00</div>
               <div class="process__bar">
-                <span></span>
+                <span id="processMain" class="process__bar-main">
+                  <span id="processPlaying" class="process__bar-playing"></span>
+                </span>
               </div>
               <div class="process__end">1:29</div>
             </div>
+            <!-- Controls right -->
             <div class="song col-xl-4 hidden-m-t">
               <div class="control__item">
                 <i id="btnMute" class="fas fa-volume-down"></i>

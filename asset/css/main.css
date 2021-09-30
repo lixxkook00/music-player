@@ -32,6 +32,10 @@ a:visited {
   color: black;
 }
 
+.hide {
+  display: none !important;
+}
+
 .btns {
   outline: none;
   font-size: 2rem;
@@ -317,6 +321,8 @@ a:visited {
 }
 
 .musics__item.active {
+  -webkit-transition: all 1s;
+  transition: all 1s;
   background-color: #e4d7d0;
 }
 
@@ -411,6 +417,10 @@ a:visited {
   font-size: 2rem;
 }
 
+.controls .control__item i.active {
+  color: #e3b197;
+}
+
 .controls .control__item:hover {
   color: #e3b197;
   cursor: pointer;
@@ -449,12 +459,27 @@ a:visited {
   padding: 0 14px;
 }
 
-.controls .process__bar span {
+.controls .process__bar-main {
   display: block;
+  position: relative;
   width: 100%;
   height: 4px;
   border-radius: 2px;
   background-color: #ddd;
+}
+
+.controls .process__bar-main:hover {
+  cursor: pointer;
+}
+
+.controls .process__bar-playing {
+  position: absolute;
+  height: 100%;
+  background-color: #e3b197;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .controls .song {
