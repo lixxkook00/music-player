@@ -69,6 +69,20 @@
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
   }
+  .category {
+    padding-bottom: 40px;
+    margin-top: 16px;
+  }
+  .category__item-img {
+    height: 140px;
+    width: 140px;
+  }
+  .category__item-img img {
+    height: 100%;
+  }
+  .category__item-title {
+    letter-spacing: 0;
+  }
 }
 
 /* Tablet to PC low resolution */
