@@ -13,4 +13,7 @@
 - update process bar -> OK
 - select from process bar -> OK
 - handle song over -> OK
-- fixbug UI mobile ->
+- fixbug UI mobile -> OK
+- fixbug process bar onclick -> OK
+- MUTE -> OK
+- Play/Pause (state,UI) by space key -> OK

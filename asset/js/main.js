@@ -15,6 +15,9 @@ const btnRandom = document.querySelector('#btnRandom')
 const btnUndo = document.querySelector('#btnUndo')
 const playIcon = document.querySelector('#playIcon')
 const pauseIcon = document.querySelector('#pauseIcon')
+const btnMuted = document.querySelector('#btnMuted')
+const btnMute = document.querySelector('#btnMute')
+const btnMutes = document.querySelector('#btnMutes')
 
 
 import data , {category} from './data.js'
@@ -65,8 +68,10 @@ const renderCategory = (data) => {
 const showIcon = (state) => {
     if(state) {
         showIconPause();
+        playingState = true;
     }else{
         showIconPlay();
+        playingState = false;
     }
 }
 
@@ -90,6 +95,7 @@ let currentIndexSong = 0;
 let playingState = false;
 let randomState = false;
 let undoState = false;
+let muteState = false;
 const listSongLength = data.length;
 
 // Update current time
@@ -105,7 +111,6 @@ const updateCurrentTimePlaying = () => {
         second = sectionCurrentTimeSecond
     }
     songTimeCurrent.innerText = `${sectionCurrentTimeMinute}:${second}`
-    console.log()
     
     // update process bar
     processPlaying.style.width = `${parseInt((audio.currentTime/audio.duration)*100)}%`
@@ -121,6 +126,11 @@ songs.forEach((song) => {
 })
 
 // Handle controls
+const stopSong = () => {
+    audio.pause()
+    showIcon(false);
+}
+
 const playSong = (index) => {
     const musicURL = data[index].musicURL;
     // Active UI
@@ -157,8 +167,7 @@ const playSong = (index) => {
     },1000)
 
     // Show icon pause
-    playingState = true;
-    showIcon(playingState);
+    showIcon(true);
 
     
 }
@@ -192,32 +201,29 @@ const nextSong = () => {
     }else{
         currentIndexSong = parseInt(Math.random()*listSongLength);
         playSong(currentIndexSong);
-        console.log(randomState,currentIndexSong);
     }
 }
 
-// NEXT
+
+// BUTTON NEXT
 btnPrev.onclick = () => {
     prevSong();
 }
-// PLAY/PAUSE
+// BUTTON PLAY/PAUSE
 btnPlay.onclick = () => {
     if(playingState){
-        audio.pause()
-        playingState = false;
-        showIcon(playingState)
+        stopSong();
     }else{
         audio.play();
-        playingState = true;
-        showIcon(playingState)
+        showIcon(true);
     }
 }
 
-// NEXT
+// BUTTON NEXT
 btnNext.onclick = () => {
     nextSong();
 }
-// RANDOM
+// BUTTON RANDOM
 btnRandom.onclick = () => {
     if(!randomState){
         btnRandom.classList.add('active')
@@ -227,7 +233,7 @@ btnRandom.onclick = () => {
         randomState = false;
     }
 }
-// UNDO
+// BUTTON UNDO
 btnUndo.onclick = () => {
     if(!undoState){
         btnUndo.classList.add('active')
@@ -236,6 +242,20 @@ btnUndo.onclick = () => {
         btnUndo.classList.remove('active')
         undoState = false;
     }
+}
+
+// BUTTON MUTE
+btnMutes.onclick = () => {
+    if(muteState){
+        btnMuted.classList.add('hide')
+        btnMute.classList.remove('hide')
+        muteState = false;
+    }else{
+        btnMuted.classList.remove('hide')
+        btnMute.classList.add('hide')
+        muteState = true;
+    }
+    audio.muted = muteState;
 }
 
 // PROCESS BAR
@@ -250,5 +270,19 @@ processMain.onclick = (e) => {
     processPlaying.style.width = `${valuePercentProcessOnClick}%`;
     audio.currentTime = (valuePercentProcessOnClick/100)*audio.duration;
     audio.play();
+    showIcon(true);
 }
 
+// Handle event keydown
+document.addEventListener('keydown', event => {
+    // Play-Pause
+    if (event.code === 'Space') {
+        if(playingState){
+            stopSong();
+        }else{
+            audio.play();
+            showIcon(true);
+        }
+        event.preventDefault();
+    }
+})
