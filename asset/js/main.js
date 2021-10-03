@@ -335,6 +335,7 @@ const offDarkMode = () => {
 // DARK MODE
 if (localStorage.getItem("luongleeDarkMode") == "true") {
     stateDarkMode = true;
+    iconDarkMode.style.transform = "translateX(24px)";
     onDarkMode();
 }
 
