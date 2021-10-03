@@ -18,3 +18,6 @@
 -   MUTE -> OK
 -   Play/Pause (state,UI) by space key -> OK
 -   fixbug Play/Pause (state,UI) by space key -> OK
+-   Add Darkmode -> OK
+-   Add change Theme -> OK
+-   fixbug logic -> OK

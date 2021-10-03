@@ -1,0 +1,49 @@
+:root{
+    --currentModeBackground: #fff;
+    --currentModeColor: #000;
+    --currentModePrimary: #e3b197;
+    --darkModeElement: #fff;
+}
+
+/* Dark mode */
+.btns-primary,
+.category__item,
+.musics{
+    background-color: var(--darkModeElement);
+}
+
+body,
+.controls,
+.theme{
+    background-color: var(--currentModeBackground) !important;
+}
+
+.btns-primary,
+body,
+.infor__socials i,
+.nav-item{
+    color: var(--currentModeColor);
+}
+.infor__hashtags-item{
+    border-color: var(--currentModeColor);
+}
+
+
+/* Theme */
+.musics__item.active,
+.nav-item--active::before,
+.controls .process__bar-playing,
+.btns-primary:hover,
+.musics__item:hover,
+.theme-icon{
+    background-color: var(--currentModePrimary) !important;
+}
+
+.nav-item:hover,
+.controls .song__section-title:hover,
+.controls .control__item:hover,
+.controls .control__item i.active,
+.infor__socials-item:hover i,
+body .nav-item--active{
+    color: var(--currentModePrimary) !important;
+}

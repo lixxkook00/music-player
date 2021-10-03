@@ -6,6 +6,9 @@ const songTimeEnd = document.querySelector(".process__end");
 const songTimeCurrent = document.querySelector(".process__start");
 const processPlaying = document.querySelector("#processPlaying");
 const processMain = document.querySelector("#processMain");
+const theme = document.querySelector(".theme");
+const darkmodeElement = document.querySelector(".modes-button");
+const themeList = document.querySelectorAll(".primary-item");
 // Button
 const audio = document.querySelector(".audio");
 const btnPrev = document.querySelector("#btnPrev");
@@ -18,6 +21,8 @@ const pauseIcon = document.querySelector("#pauseIcon");
 const btnMuted = document.querySelector("#btnMuted");
 const btnMute = document.querySelector("#btnMute");
 const btnMutes = document.querySelector("#btnMutes");
+const themeIcon = document.querySelector("#themeIcon");
+const iconDarkMode = document.querySelector("#iconDarkMode");
 
 import data, { category } from "./data.js";
 
@@ -174,6 +179,8 @@ const playSong = (index) => {
     showIcon(true);
 };
 
+playSong(currentIndexSong);
+
 // Control Onclick
 const prevSong = () => {
     if (!randomState) {
@@ -285,9 +292,89 @@ document.addEventListener("keydown", (event) => {
         } else {
             audio.play();
             showIcon(true);
-            playSong(currentIndexSong);
-            playingState = true;
         }
         event.preventDefault();
     }
 });
+
+// Theme and Dark mode
+
+let stateTheme = false;
+let stateDarkMode = false;
+
+const changeStateElement = (state, element, classOpenElement) => {
+    if (state) {
+        element.classList.remove(classOpenElement);
+        return false;
+    } else {
+        element.classList.add(classOpenElement);
+        return true;
+    }
+};
+
+const onDarkMode = () => {
+    document.documentElement.style.setProperty(
+        "--currentModeBackground",
+        "#121212"
+    );
+    document.documentElement.style.setProperty("--currentModeColor", "#dfdfdf");
+    document.documentElement.style.setProperty("--darkModeElement", "#1e1e1e");
+
+    localStorage.setItem("luongleeDarkMode", "true");
+};
+const offDarkMode = () => {
+    document.documentElement.style.setProperty(
+        "--currentModeBackground",
+        "#fff"
+    );
+    document.documentElement.style.setProperty("--currentModeColor", "#000");
+    document.documentElement.style.setProperty("--darkModeElement", "#fff");
+
+    localStorage.setItem("luongleeDarkMode", "false");
+};
+// DARK MODE
+if (localStorage.getItem("luongleeDarkMode") == "true") {
+    stateDarkMode = true;
+    onDarkMode();
+}
+
+themeIcon.onclick = () => {
+    stateTheme = changeStateElement(stateTheme, theme, "open-theme");
+};
+
+darkmodeElement.onclick = () => {
+    if (!stateDarkMode) {
+        iconDarkMode.style.transform = "translateX(24px)";
+        stateDarkMode = true;
+        onDarkMode();
+    } else {
+        iconDarkMode.style.transform = "translateX(0)";
+        stateDarkMode = false;
+        offDarkMode();
+    }
+};
+
+// THEME
+// render color
+themeList.forEach((item) => {
+    const valueThemeColor = item.dataset.color;
+    item.style.backgroundColor = `#${valueThemeColor}`;
+});
+// change theme
+themeList.forEach((item) => {
+    item.onclick = () => {
+        const valueThemeColor = item.dataset.color;
+        document.documentElement.style.setProperty(
+            "--currentModePrimary",
+            `#${valueThemeColor}`
+        );
+        localStorage.setItem("luongleeTheme", `#${valueThemeColor}`);
+    };
+});
+
+if (localStorage.getItem("luongleeTheme") != null) {
+    document.documentElement.style.setProperty(
+        "--currentModePrimary",
+        `${localStorage.getItem("luongleeTheme")}`
+    );
+}

@@ -8,3 +8,18 @@
         transform: rotate(360deg);
     }
 }
+
+@keyframes RotateAndBreath {
+    0% {
+        transition: all 0.5s;
+        transform: rotate(0) scale(1);
+    }
+    50% {
+        transition: all 0.5s;
+        transform: rotate(180deg) scale(1.2);
+    }
+    100% {
+        transition: all 0.5s;
+        transform: rotate(360deg) scale(1);
+    }
+}

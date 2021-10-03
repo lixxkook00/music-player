@@ -1,111 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="icon"
-      href="./asset/img/iC-.svg"
-      type="image/gif"
-      sizes="16x16"
-    />
-    <link rel="stylesheet" href="./asset/css/main.css" />
-    <link rel="stylesheet" href="./asset/css/responsive.css" />
-    <title>luonglee</title>
-  </head>
-  <body>
-    <div class="app">
-      <audio class="audio" src="./asset/music/1.nhungngaycuoicung.mp3"></audio>
-      <!-- Main content -->
-      <div class="container">
-        <!-- NAV -->
-        <div class="nav">
-          <div class="nav-logo">
-            <img src="./asset/img/logo.jpeg" alt="" />
-          </div>
-          <ul class="nav-list hidden-m">
-            <li class="nav-item nav-item--active">SOUNDTRACKS</li>
-            <li class="nav-item">NEW ALBUMS</li>
-            <li class="nav-item">GENRES</li>
-          </ul>
-          <div class="nav-donate hidden-m">
-            <button class="btns btns-primary">Buy me a beer</button>
-          </div>
-        </div>
-        <!-- Main -->
-        <div class="main row">
-          <!-- Infor -->
-          <div class="infor col-xl-4 col-lg-4">
-            <!-- Infor Avt -->
-            <div class="infor__avt">
-              <img src="./asset/img/avt.jpeg" alt="" />
-            </div>
-            <!-- Infor Name -->
-            <div class="infor__name">Lương Siu Nhân ♪</div>
-            <!-- Infor Desc -->
-            <div class="infor__desc">a.k.a Lương Tốc Độ</div>
-            <!-- Infor Socials -->
-            <div class="infor__socials">
-              <div class="infor__socials-item">
-                <a href="">
-                  <i class="fab fa-facebook"></i>
-                </a>
-              </div>
-              <div class="infor__socials-item">
-                <a href="">
-                  <i class="fab fa-instagram"></i>
-                </a>
-              </div>
-              <div class="infor__socials-item">
-                <a href="">
-                  <i class="fab fa-soundcloud"></i>
-                </a>
-              </div>
-              <div class="infor__socials-item">
-                <a href="">
-                  <i class="fab fa-youtube"></i>
-                </a>
-              </div>
-            </div>
-            <!-- Infor Hashtag -->
-            <div class="infor__hashtags">
-              <div class="infor__hashtags-item">Sad</div>
-              <div class="infor__hashtags-item">Fuckboiz</div>
-              <div class="infor__hashtags-item">Black</div>
-              <div class="infor__hashtags-item">Flower</div>
-              <div class="infor__hashtags-item">Music</div>
-            </div>
-          </div>
-          <!-- Play List -->
-          <div class="musics col-xl-8 col-lg-8">
-            <!-- <div class="musics__item">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+            integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+            integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="icon"
+            href="./asset/img/iC-.svg"
+            type="image/gif"
+            sizes="16x16"
+        />
+        <link rel="stylesheet" href="./asset/css/main.css" />
+        <link rel="stylesheet" href="./asset/css/responsive.css" />
+        <link rel="stylesheet" href="./asset/css/theme.css" />
+        <title>luonglee</title>
+    </head>
+    <body>
+        <div class="app">
+            <!-- Audio -->
+            <audio
+                class="audio"
+                src="./asset/music/1.nhungngaycuoicung.mp3"
+            ></audio>
+
+            <!-- Main content -->
+            <div class="container">
+                <!-- NAV -->
+                <div class="nav">
+                    <div class="nav-logo">
+                        <img src="./asset/img/logo.png" alt="" />
+                    </div>
+                    <ul class="nav-list hidden-m">
+                        <li class="nav-item nav-item--active">SOUNDTRACKS</li>
+                        <li class="nav-item">NEW ALBUMS</li>
+                        <li class="nav-item">GENRES</li>
+                    </ul>
+                    <div class="nav-donate hidden-m">
+                        <button class="btns btns-primary">Buy me a beer</button>
+                    </div>
+                </div>
+                <!-- Main -->
+                <div class="main row">
+                    <!-- Infor -->
+                    <div class="infor col-xl-4 col-lg-4">
+                        <!-- Infor Avt -->
+                        <div class="infor__avt">
+                            <img src="./asset/img/avt.jpeg" alt="" />
+                        </div>
+                        <!-- Infor Name -->
+                        <div class="infor__name">Lương Siu Nhân ♪</div>
+                        <!-- Infor Desc -->
+                        <div class="infor__desc">a.k.a Lương Tốc Độ</div>
+                        <!-- Infor Socials -->
+                        <div class="infor__socials">
+                            <div class="infor__socials-item">
+                                <a href="">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                            </div>
+                            <div class="infor__socials-item">
+                                <a href="">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                            <div class="infor__socials-item">
+                                <a href="">
+                                    <i class="fab fa-soundcloud"></i>
+                                </a>
+                            </div>
+                            <div class="infor__socials-item">
+                                <a href="">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Infor Hashtag -->
+                        <div class="infor__hashtags">
+                            <div class="infor__hashtags-item">Sad</div>
+                            <div class="infor__hashtags-item">Fuckboiz</div>
+                            <div class="infor__hashtags-item">Black</div>
+                            <div class="infor__hashtags-item">Flower</div>
+                            <div class="infor__hashtags-item">Music</div>
+                        </div>
+                    </div>
+                    <!-- Play List -->
+                    <div class="musics col-xl-8 col-lg-8">
+                        <!-- <div class="musics__item">
               <div class="musics__item-no">1</div>
               <div class="musics__item-img">
                 <img src="./asset/img/song1.jpg" alt="" />
@@ -120,12 +126,12 @@
               </div>
               <div class="musics__item-time">1:29</div>
             </div> -->
-          </div>
-        </div>
+                    </div>
+                </div>
 
-        <!-- Categories -->
-        <div class="category row">
-          <!-- <div class="col-xl-2 col-md-3">
+                <!-- Categories -->
+                <div class="category row">
+                    <!-- <div class="col-xl-2 col-md-3">
             <div class="category__item">
               <div class="category__item-img">
                 <img src="./asset/img/song2.jpg" alt="" />
@@ -135,58 +141,96 @@
               <div class="category__item-time">25/01/2021</div>
             </div>
           </div> -->
-        </div>
-      </div>
-      <!-- Main controls -->
-      <div class="controls">
-        <div class="container">
-          <div class="row">
-            <!-- Controls left -->
-            <div class="control col-xl-3 col-md-6 col-12">
-              <div class="control__item">
-                <i id="btnPrev" class="fas fa-step-backward"></i>
-              </div>
-              <div id="btnPlay" class="control__item">
-                <i id="playIcon" class="fas fa-play"></i>
-                <i id="pauseIcon" class="fas fa-pause hide"></i>
-              </div>
-              <div class="control__item">
-                <i id="btnNext" class="fas fa-step-forward"></i>
-              </div>
-              <div class="control__item">
-                <i id="btnRandom" class="fas fa-random"></i>
-              </div>
-              <div class="control__item">
-                <i id="btnUndo" class="fas fa-undo"></i>
-              </div>
-            </div>
-            <!-- Controls center -->
-            <div class="process col-xl-5 col-md-6">
-              <div class="process__start">0:00</div>
-              <div class="process__bar">
-                <span id="processMain" class="process__bar-main">
-                  <span id="processPlaying" class="process__bar-playing"></span>
-                </span>
-              </div>
-              <div class="process__end">1:29</div>
-            </div>
-            <!-- Controls right -->
-            <div class="song col-xl-4 hidden-m-t">
-              <div id="btnMutes" class="control__item">
-                <i id="btnMute" class="fas fa-volume-up"></i>
-                <i id="btnMuted" class="fas fa-volume-mute hide active"></i>
-              </div>
-              <div class="song__section">
-                <div class="song__section-img">
-                  <img src="./asset/img/song1.jpg" alt="" />
                 </div>
-                <div class="song__section-title">nhung ngay cuoi cung</div>
-              </div>
             </div>
-          </div>
+
+            <!-- Main controls -->
+            <div class="controls">
+                <div class="container">
+                    <div class="row">
+                        <!-- Controls left -->
+                        <div class="control col-xl-3 col-md-6 col-12">
+                            <div class="control__item">
+                                <i
+                                    id="btnPrev"
+                                    class="fas fa-step-backward"
+                                ></i>
+                            </div>
+                            <div id="btnPlay" class="control__item">
+                                <i id="playIcon" class="fas fa-play"></i>
+                                <i id="pauseIcon" class="fas fa-pause hide"></i>
+                            </div>
+                            <div class="control__item">
+                                <i id="btnNext" class="fas fa-step-forward"></i>
+                            </div>
+                            <div class="control__item">
+                                <i id="btnRandom" class="fas fa-random"></i>
+                            </div>
+                            <div class="control__item">
+                                <i id="btnUndo" class="fas fa-undo"></i>
+                            </div>
+                        </div>
+                        <!-- Controls center -->
+                        <div class="process col-xl-5 col-md-6">
+                            <div class="process__start">0:00</div>
+                            <div class="process__bar">
+                                <span
+                                    id="processMain"
+                                    class="process__bar-main"
+                                >
+                                    <span
+                                        id="processPlaying"
+                                        class="process__bar-playing"
+                                    ></span>
+                                </span>
+                            </div>
+                            <div class="process__end">1:29</div>
+                        </div>
+                        <!-- Controls right -->
+                        <div class="song col-xl-4 hidden-m-t">
+                            <div id="btnMutes" class="control__item">
+                                <i id="btnMute" class="fas fa-volume-up"></i>
+                                <i
+                                    id="btnMuted"
+                                    class="fas fa-volume-mute hide active"
+                                ></i>
+                            </div>
+                            <div class="song__section">
+                                <div class="song__section-img">
+                                    <img src="./asset/img/song1.jpg" alt="" />
+                                </div>
+                                <div class="song__section-title">
+                                    nhung ngay cuoi cung
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Theme -->
+            <div class="theme">
+                <div class="theme-title">Choose your mood</div>
+                <div class="theme-content">
+                    <div class="theme-content__primary">
+                        <div class="primary-item" data-color="826c87"></div>
+                        <div class="primary-item" data-color="dc796d"></div>
+                        <div class="primary-item" data-color="e3b197"></div>
+                        <div class="primary-item" data-color="a3cee4"></div>
+                    </div>
+                    <div class="theme-content__modes">
+                        <div class="modes-button">
+                            <img class="" src="./asset/img/sun.png" alt="" />
+                            <img src="./asset/img/moon.png" alt="" />
+                            <span id="iconDarkMode"> </span>
+                        </div>
+                    </div>
+                </div>
+                <div id="themeIcon" class="theme-icon">
+                    <img src="./asset/img/music.png" alt="" />
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </body>
-  <script type="module" src="./asset/js/main.js"></script>
+    </body>
+    <script type="module" src="./asset/js/main.js"></script>
 </html>
