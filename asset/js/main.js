@@ -73,6 +73,9 @@ const renderCategory = (data) => {
     categoryArea.innerHTML = categoryRaw;
 };
 
+renderMusic(data);
+renderCategory(category);
+
 const showIcon = (state) => {
     if (state) {
         showIconPause();
@@ -92,9 +95,6 @@ const showIconPause = () => {
     playIcon.classList.add("hide");
     pauseIcon.classList.remove("hide");
 };
-
-renderMusic(data);
-renderCategory(category);
 
 // Handle Event
 const songs = document.querySelectorAll(".musics__item");
@@ -179,7 +179,12 @@ const playSong = (index) => {
     showIcon(true);
 };
 
-playSong(currentIndexSong);
+window.onload = (event) => {
+    playSong(currentIndexSong);
+    playingState = false;
+    showIconPlay();
+};
+// showIconPlay();
 
 // Control Onclick
 const prevSong = () => {
